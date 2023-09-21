@@ -47,14 +47,14 @@ const Profile = () => {
     
   useEffect(() => {
     if (isLoading) {
-      return; // Wait for authentication to complete
+      return; 
     }
   
     showCollections();
   }, [isLoading]);
 
   function handleDelete(i){
-    
+    let items = JSON.P(localStorage.getItem("item")); 
   }
 
 
@@ -82,7 +82,8 @@ const Profile = () => {
       return(
         <div style={{display:"block"}}>
         
-        <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShozcPe7Ybr9kNszwibJncG0EVErR3oaFT2H3v0Jz32UN9plVApfuIwoZKWsxPr0FM_bU&usqp=CAU" width={200} height={200} onClick={()=>showItems(collection.collectionName)}/>
+        <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShozcPe7Ybr9kNszwibJncG0EVErR3oaFT2H3v0Jz32UN9plVApfuIwoZKWsxPr0FM_bU&usqp=CAU"
+         width={200} height={200} onClick={()=>showItems(collection.collectionName)}/>
           <h4 style={{marginLeft:"25px"}}>{collection.collectionName}</h4>
         </div>
       )
